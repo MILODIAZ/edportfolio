@@ -63,4 +63,7 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  corePlugins: {
+    backgroundAttachment: true,
+  }
 }
