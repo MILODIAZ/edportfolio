@@ -1489,6 +1489,14 @@ body {
   background-attachment: local;
 }
 
+#contact {
+  background-image: url(../images/contact/contact-section-background.gif);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  box-shadow: inset 0px 200px 160px 0px rgba(0, 0, 0, 1), inset 0px -100px 75px 0px rgba(0, 0, 0, 1);
+}
+
 #projects {
   background-image: url(../images/projects/Projects_Section_Background.gif);
   background-position: center;
