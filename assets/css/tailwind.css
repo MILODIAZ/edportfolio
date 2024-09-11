@@ -74,6 +74,37 @@ body {
   box-shadow: inset 0px 300px 160px 0px rgba(0, 0, 0, 1), inset 0px -100px 100px 0px rgba(0, 0, 0, 1);
 }
 
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid #FFF;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border-bottom: 4px solid #ff00bb;
+  border-left: 4px solid transparent;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+
 /*
 1. Add the correct height in Firefox.
 2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
@@ -1792,6 +1823,11 @@ body {
 .text-base {
   font-size: 0.7rem;
   line-height: 1.5rem;
+}
+
+.text-xxs {
+  font-size: 0.7rem;
+  line-height: 1rem;
 }
 
 .text-nav {
