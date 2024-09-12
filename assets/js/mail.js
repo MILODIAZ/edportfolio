@@ -1,4 +1,4 @@
-const form = document.querySelector('contactForm');
+const form = document.querySelector("contactForm");
 
 function sendEmail() {
     Email.send({
@@ -14,7 +14,7 @@ function sendEmail() {
     );
 }
 
-form.addEventListener('submit', (e) => {
+form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     sendEmail();
