@@ -3,6 +3,7 @@ const fullName = document.getElementById("fullName");
 const email = document.getElementById("email");
 const phone = document.getElementById("phone");
 const message = document.getElementById("message");
+const submitButton = document.getElementById("submitButton");
 
 function sendEmail() {
     const bodyMessage = `Full Name: ${fullName.value}<br> Email: ${email.value}<br> Phone: ${phone.value}<br> Message: ${message.value}`;
@@ -17,6 +18,8 @@ function sendEmail() {
         message => {
             document.getElementById("spinner").classList.add("hidden");
             document.getElementById("buttonText").classList.remove("hidden");
+            submitButton.disabled = false;
+
             if (message == "OK") {
                 Swal.fire({
                     title: "Success!",
@@ -43,6 +46,7 @@ function sendEmail() {
     ).catch(error => {
         document.getElementById("spinner").classList.add("hidden");
         document.getElementById("buttonText").classList.remove("hidden");
+        submitButton.disabled = false;
 
         Swal.fire({
             title: "Error!",
@@ -107,6 +111,8 @@ form.addEventListener("submit", (e) => {
         && email.parentElement.getElementsByTagName("span")[0].classList.contains("hidden")
         && phone.parentElement.getElementsByTagName("span")[0].classList.contains("hidden")
         && message.parentElement.getElementsByTagName("span")[0].classList.contains("hidden")) {
+        submitButton.disabled = true;
+
         document.getElementById("buttonText").classList.add("hidden");
         document.getElementById("spinner").classList.remove("hidden");
         sendEmail();
